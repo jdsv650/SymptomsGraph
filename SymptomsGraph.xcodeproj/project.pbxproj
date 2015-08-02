@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13E3C6067E67879384DE6848 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C4EBFF30397D355DEC9C25 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A63AD281B6D672900B76C84 /* graphsymptoms.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A63AD271B6D672900B76C84 /* graphsymptoms.json */; };
+		1AF092301B6DA043004431FA /* SymptomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF0922F1B6DA043004431FA /* SymptomTableViewController.swift */; };
 		1AF57E0B1B6D53A30079E547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF57E0A1B6D53A30079E547 /* AppDelegate.swift */; };
-		1AF57E0D1B6D53A30079E547 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF57E0C1B6D53A30079E547 /* ViewController.swift */; };
 		1AF57E101B6D53A30079E547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF57E0E1B6D53A30079E547 /* Main.storyboard */; };
 		1AF57E121B6D53A30079E547 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF57E111B6D53A30079E547 /* Images.xcassets */; };
 		1AF57E151B6D53A30079E547 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF57E131B6D53A30079E547 /* LaunchScreen.xib */; };
@@ -26,16 +28,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00C4EBFF30397D355DEC9C25 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A63AD271B6D672900B76C84 /* graphsymptoms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graphsymptoms.json; sourceTree = "<group>"; };
+		1AF0922F1B6DA043004431FA /* SymptomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomTableViewController.swift; sourceTree = "<group>"; };
 		1AF57E051B6D53A30079E547 /* SymptomsGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SymptomsGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF57E091B6D53A30079E547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AF57E0A1B6D53A30079E547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1AF57E0C1B6D53A30079E547 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AF57E0F1B6D53A30079E547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AF57E111B6D53A30079E547 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AF57E141B6D53A30079E547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1AF57E1A1B6D53A30079E547 /* SymptomsGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymptomsGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF57E1F1B6D53A30079E547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AF57E201B6D53A30079E547 /* SymptomsGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsGraphTests.swift; sourceTree = "<group>"; };
+		991AAF289DD411D700BB2622 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E624F16A905E417E7A909DAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E3C6067E67879384DE6848 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02DB456F3CC7342D0B1E65D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E624F16A905E417E7A909DAE /* Pods.debug.xcconfig */,
+				991AAF289DD411D700BB2622 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1AF57DFC1B6D53A30079E547 = {
 			isa = PBXGroup;
 			children = (
 				1AF57E071B6D53A30079E547 /* SymptomsGraph */,
 				1AF57E1D1B6D53A30079E547 /* SymptomsGraphTests */,
 				1AF57E061B6D53A30079E547 /* Products */,
+				02DB456F3CC7342D0B1E65D0 /* Pods */,
+				FAA66005971238F06CB0A62C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF57E0A1B6D53A30079E547 /* AppDelegate.swift */,
-				1AF57E0C1B6D53A30079E547 /* ViewController.swift */,
+				1AF0922F1B6DA043004431FA /* SymptomTableViewController.swift */,
 				1AF57E0E1B6D53A30079E547 /* Main.storyboard */,
 				1AF57E111B6D53A30079E547 /* Images.xcassets */,
 				1AF57E131B6D53A30079E547 /* LaunchScreen.xib */,
@@ -90,6 +108,7 @@
 		1AF57E081B6D53A30079E547 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A63AD271B6D672900B76C84 /* graphsymptoms.json */,
 				1AF57E091B6D53A30079E547 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +131,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FAA66005971238F06CB0A62C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00C4EBFF30397D355DEC9C25 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AF57E241B6D53A30079E547 /* Build configuration list for PBXNativeTarget "SymptomsGraph" */;
 			buildPhases = (
+				C469E3F60D3068CF6BFA821B /* Check Pods Manifest.lock */,
 				1AF57E011B6D53A30079E547 /* Sources */,
 				1AF57E021B6D53A30079E547 /* Frameworks */,
 				1AF57E031B6D53A30079E547 /* Resources */,
+				722250B51FADDF4077FDC6EB /* Embed Pods Frameworks */,
+				35B5FD913D2F233E36D1EF1E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A63AD281B6D672900B76C84 /* graphsymptoms.json in Resources */,
 				1AF57E101B6D53A30079E547 /* Main.storyboard in Resources */,
 				1AF57E151B6D53A30079E547 /* LaunchScreen.xib in Resources */,
 				1AF57E121B6D53A30079E547 /* Images.xcassets in Resources */,
@@ -207,12 +238,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35B5FD913D2F233E36D1EF1E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		722250B51FADDF4077FDC6EB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C469E3F60D3068CF6BFA821B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1AF57E011B6D53A30079E547 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF57E0D1B6D53A30079E547 /* ViewController.swift in Sources */,
+				1AF092301B6DA043004431FA /* SymptomTableViewController.swift in Sources */,
 				1AF57E0B1B6D53A30079E547 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,9 +417,11 @@
 		};
 		1AF57E251B6D53A30079E547 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E624F16A905E417E7A909DAE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SymptomsGraph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,9 +429,11 @@
 		};
 		1AF57E261B6D53A30079E547 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991AAF289DD411D700BB2622 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SymptomsGraph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +492,7 @@
 				1AF57E261B6D53A30079E547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AF57E271B6D53A30079E547 /* Build configuration list for PBXNativeTarget "SymptomsGraphTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +501,7 @@
 				1AF57E291B6D53A30079E547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,61 @@
+[
+    {
+        "Symptoms": [
+            {
+                "Feelings": "Happy",
+                "Temp": 98.6,
+                "Day": "Monday"
+            },
+            {
+                "Feelings": "Achy",
+                "Temp": 100.9,
+                "Day": "Monday"
+            },
+            {
+                "Feelings": "Sick",
+                "Temp": 103.4,
+                "Day": "Monday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 99.9,
+                "Day": "Wednesday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 100.7,
+                "Day": "Wednesday"
+            },
+            {
+                "Feelings": "Acute",
+                "Temp": 102.1,
+                "Day": "Thursday"
+            },
+            {
+                "Feelings": "Happy",
+                "Temp": 98.9,
+                "Day": "Thursday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 99.9,
+                "Day": "Friday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 100.7,
+                "Day": "Saturday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 99.9,
+                "Day": "Sunday"
+            },
+            {
+                "Feelings": "Tired",
+                "Temp": 100.7,
+                "Day": "Sunday"
+            }
+        ]
+    }
+]

@@ -1,25 +1,713 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ba5-hs-3Eh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Feelings-->
+        <scene sceneID="fTI-E1-yMe">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <tableViewController id="d9k-T2-oS5" customClass="SymptomTableViewController" customModule="SymptomsGraph" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sag-Bo-WKe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Monday" id="MVj-6x-XCN">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="fOk-fH-DSt">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fOk-fH-DSt" id="1IF-YP-uTb">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iml-7Q-dQQ">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="kkm-nv-aHw"/>
+                                                        <constraint firstAttribute="height" constant="33" id="xGW-6v-x5L"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYU-xg-TNQ">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="iSS-0d-dus"/>
+                                                        <constraint firstAttribute="width" constant="80" id="ryU-xi-6jq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zk-t7-wxG">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Vg7-Qi-vYn"/>
+                                                        <constraint firstAttribute="height" constant="33" id="XKd-tw-kSF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZo-JL-Ddw">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="iZk-p8-psb"/>
+                                                        <constraint firstAttribute="width" constant="80" id="yTj-iC-osp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsQ-tN-pFk">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="nxs-Q2-Je2"/>
+                                                        <constraint firstAttribute="height" constant="22" id="szL-Tf-gD0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0P-uP-6Y8">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="sCf-Xj-72Q"/>
+                                                        <constraint firstAttribute="width" constant="60" id="snl-az-2JZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="o0P-uP-6Y8" secondAttribute="centerX" id="5lE-Wz-cEC"/>
+                                                <constraint firstAttribute="centerY" secondItem="o0P-uP-6Y8" secondAttribute="centerY" constant="15" id="AF3-Xo-iuv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DZo-JL-Ddw" secondAttribute="bottom" id="EX8-Th-C37"/>
+                                                <constraint firstItem="0zk-t7-wxG" firstAttribute="top" secondItem="1IF-YP-uTb" secondAttribute="topMargin" id="GAR-SL-QGe"/>
+                                                <constraint firstItem="nYU-xg-TNQ" firstAttribute="leading" secondItem="1IF-YP-uTb" secondAttribute="leadingMargin" id="Tn1-vy-NsF"/>
+                                                <constraint firstItem="nYU-xg-TNQ" firstAttribute="bottom" secondItem="1IF-YP-uTb" secondAttribute="bottomMargin" id="Xvn-PW-kn1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IsQ-tN-pFk" secondAttribute="bottom" id="YuY-lZ-Izl"/>
+                                                <constraint firstItem="iml-7Q-dQQ" firstAttribute="top" secondItem="1IF-YP-uTb" secondAttribute="topMargin" id="ZfM-1J-YLp"/>
+                                                <constraint firstItem="o0P-uP-6Y8" firstAttribute="centerX" secondItem="DZo-JL-Ddw" secondAttribute="centerX" id="dEJ-9H-r7s"/>
+                                                <constraint firstItem="IsQ-tN-pFk" firstAttribute="trailing" secondItem="1IF-YP-uTb" secondAttribute="trailingMargin" id="gHz-mA-giY"/>
+                                                <constraint firstItem="nYU-xg-TNQ" firstAttribute="bottom" secondItem="1IF-YP-uTb" secondAttribute="bottomMargin" id="hbz-Ft-rfl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0zk-t7-wxG" secondAttribute="trailing" constant="10" id="hlM-sE-DgA"/>
+                                                <constraint firstItem="iml-7Q-dQQ" firstAttribute="leading" secondItem="1IF-YP-uTb" secondAttribute="leadingMargin" constant="10" id="j4D-KS-3Yv"/>
+                                                <constraint firstItem="o0P-uP-6Y8" firstAttribute="top" secondItem="1IF-YP-uTb" secondAttribute="topMargin" id="yQY-QO-Lta"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Xvn-PW-kn1"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Tuesday" id="1rX-XD-iMT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="1mM-zr-pwY">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1mM-zr-pwY" id="VGA-c8-wwE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-Z0-rxh">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="KDc-XE-rGD"/>
+                                                        <constraint firstAttribute="height" constant="33" id="lsU-rf-X2r"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-HI-UnZ">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="3Df-Hk-S8T"/>
+                                                        <constraint firstAttribute="width" constant="80" id="eaJ-H2-MAT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5X-A8-wgO">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="MJY-iQ-3ks"/>
+                                                        <constraint firstAttribute="height" constant="33" id="tmD-iR-Lw9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-sH-Ki2">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="96Z-6N-ZDo"/>
+                                                        <constraint firstAttribute="height" constant="22" id="j4g-gb-tB9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaB-iM-ga8">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="aKJ-eA-RX2"/>
+                                                        <constraint firstAttribute="height" constant="22" id="gLL-Pn-cpf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHU-WK-lsh">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="GtT-A7-d4p"/>
+                                                        <constraint firstAttribute="width" constant="60" id="qPV-9J-pN4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gHU-WK-lsh" firstAttribute="centerX" secondItem="UU6-sH-Ki2" secondAttribute="centerX" id="Aya-tk-d9p"/>
+                                                <constraint firstItem="v5X-A8-wgO" firstAttribute="top" secondItem="VGA-c8-wwE" secondAttribute="topMargin" id="FTs-OD-bFO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oaB-iM-ga8" secondAttribute="bottom" id="IOK-b6-kR5"/>
+                                                <constraint firstItem="cHF-HI-UnZ" firstAttribute="bottom" secondItem="VGA-c8-wwE" secondAttribute="bottomMargin" id="JwA-MU-1yg"/>
+                                                <constraint firstItem="MhG-Z0-rxh" firstAttribute="leading" secondItem="VGA-c8-wwE" secondAttribute="leadingMargin" constant="10" id="MlU-Vj-g5r"/>
+                                                <constraint firstAttribute="centerY" secondItem="gHU-WK-lsh" secondAttribute="centerY" constant="15" id="Ppg-ai-a43"/>
+                                                <constraint firstItem="cHF-HI-UnZ" firstAttribute="bottom" secondItem="VGA-c8-wwE" secondAttribute="bottomMargin" id="VKe-eQ-I4m"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="v5X-A8-wgO" secondAttribute="trailing" constant="10" id="c3B-D0-d3n"/>
+                                                <constraint firstItem="cHF-HI-UnZ" firstAttribute="leading" secondItem="VGA-c8-wwE" secondAttribute="leadingMargin" id="g3U-oS-c11"/>
+                                                <constraint firstItem="oaB-iM-ga8" firstAttribute="trailing" secondItem="VGA-c8-wwE" secondAttribute="trailingMargin" id="hzQ-fT-CyE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UU6-sH-Ki2" secondAttribute="bottom" id="jE2-uB-jVd"/>
+                                                <constraint firstItem="gHU-WK-lsh" firstAttribute="top" secondItem="VGA-c8-wwE" secondAttribute="topMargin" id="s4v-ze-6dZ"/>
+                                                <constraint firstItem="MhG-Z0-rxh" firstAttribute="top" secondItem="VGA-c8-wwE" secondAttribute="topMargin" id="uGj-Sr-ZsQ"/>
+                                                <constraint firstAttribute="centerX" secondItem="gHU-WK-lsh" secondAttribute="centerX" id="ymQ-bY-blZ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="VKe-eQ-I4m"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Wednesday" id="Hyw-T6-Rbk">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="bsE-Ec-B8V">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsE-Ec-B8V" id="Zwr-kC-ghH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-4c-jZb">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="7al-bk-GRV"/>
+                                                        <constraint firstAttribute="height" constant="33" id="cTj-tf-Imk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA4-Xm-5uJ">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="TOo-nj-81Q"/>
+                                                        <constraint firstAttribute="height" constant="22" id="q4v-W8-LNI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtE-rW-QMe">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="LP5-vw-SQc"/>
+                                                        <constraint firstAttribute="height" constant="33" id="gsn-Wm-N1Z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6O-K0-ZOn">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="250-i9-GWS"/>
+                                                        <constraint firstAttribute="height" constant="22" id="5WW-wP-CEp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64b-5a-zNs">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="CF9-xI-EoW"/>
+                                                        <constraint firstAttribute="width" constant="80" id="e3a-u7-zsv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGw-nv-hMm">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="3QW-zv-s1Q"/>
+                                                        <constraint firstAttribute="height" constant="33" id="sDg-PX-8Pu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XA4-Xm-5uJ" firstAttribute="bottom" secondItem="Zwr-kC-ghH" secondAttribute="bottomMargin" id="3rb-d6-lGZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="S6O-K0-ZOn" secondAttribute="bottom" id="79s-2n-sZs"/>
+                                                <constraint firstItem="GGw-nv-hMm" firstAttribute="centerX" secondItem="S6O-K0-ZOn" secondAttribute="centerX" id="BKm-qO-KWd"/>
+                                                <constraint firstItem="MBl-4c-jZb" firstAttribute="top" secondItem="Zwr-kC-ghH" secondAttribute="topMargin" id="Dxi-W1-lqY"/>
+                                                <constraint firstItem="GGw-nv-hMm" firstAttribute="top" secondItem="Zwr-kC-ghH" secondAttribute="topMargin" id="KLc-i0-28Z"/>
+                                                <constraint firstItem="64b-5a-zNs" firstAttribute="trailing" secondItem="Zwr-kC-ghH" secondAttribute="trailingMargin" id="KbS-p9-gIz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="64b-5a-zNs" secondAttribute="bottom" id="KuM-KR-aSM"/>
+                                                <constraint firstAttribute="centerX" secondItem="GGw-nv-hMm" secondAttribute="centerX" id="PtY-u4-73R"/>
+                                                <constraint firstAttribute="centerY" secondItem="GGw-nv-hMm" secondAttribute="centerY" constant="15" id="d3y-ZE-E4F"/>
+                                                <constraint firstItem="XA4-Xm-5uJ" firstAttribute="leading" secondItem="Zwr-kC-ghH" secondAttribute="leadingMargin" id="dWV-6f-HGi"/>
+                                                <constraint firstItem="XA4-Xm-5uJ" firstAttribute="bottom" secondItem="Zwr-kC-ghH" secondAttribute="bottomMargin" id="hFX-PT-G0u"/>
+                                                <constraint firstItem="MBl-4c-jZb" firstAttribute="leading" secondItem="Zwr-kC-ghH" secondAttribute="leadingMargin" constant="10" id="oZD-HD-Dgd"/>
+                                                <constraint firstItem="UtE-rW-QMe" firstAttribute="top" secondItem="Zwr-kC-ghH" secondAttribute="topMargin" id="wDv-80-BWD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UtE-rW-QMe" secondAttribute="trailing" constant="10" id="zh8-PK-bZq"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="hFX-PT-G0u"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Thursday" id="nVr-aR-OOI">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="tr2-3C-rMn">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tr2-3C-rMn" id="WvH-bv-YMh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoj-Pu-QDM">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Xhm-fu-tYC"/>
+                                                        <constraint firstAttribute="height" constant="33" id="x1H-Ve-NmK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0F-L1-saB">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="RMt-d8-aGv"/>
+                                                        <constraint firstAttribute="width" constant="80" id="xNG-bc-mcA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-zM-yTV">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="SGw-Tu-sOH"/>
+                                                        <constraint firstAttribute="height" constant="33" id="d1g-sl-GsO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsN-W1-6xU">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="ReX-bM-8co"/>
+                                                        <constraint firstAttribute="width" constant="80" id="V35-Yb-OPs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hio-2G-a4u">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="H9n-jp-Vs2"/>
+                                                        <constraint firstAttribute="width" constant="80" id="RGU-qC-Ivo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n87-l1-Mig">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="V3z-Qo-NdY"/>
+                                                        <constraint firstAttribute="width" constant="60" id="xoI-CI-Q7R"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VsN-W1-6xU" secondAttribute="bottom" id="2LD-GP-2NS"/>
+                                                <constraint firstAttribute="centerY" secondItem="n87-l1-Mig" secondAttribute="centerY" constant="15" id="4zK-NM-kfZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hio-2G-a4u" secondAttribute="bottom" id="6Vr-dU-2lf"/>
+                                                <constraint firstItem="Z0F-L1-saB" firstAttribute="leading" secondItem="WvH-bv-YMh" secondAttribute="leadingMargin" id="Al8-eW-cB2"/>
+                                                <constraint firstItem="Z0F-L1-saB" firstAttribute="bottom" secondItem="WvH-bv-YMh" secondAttribute="bottomMargin" id="G78-m5-LH2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2TJ-zM-yTV" secondAttribute="trailing" constant="10" id="Jp9-Y7-PIw"/>
+                                                <constraint firstItem="Xoj-Pu-QDM" firstAttribute="top" secondItem="WvH-bv-YMh" secondAttribute="topMargin" id="PTB-G4-GhE"/>
+                                                <constraint firstAttribute="centerX" secondItem="n87-l1-Mig" secondAttribute="centerX" id="Sll-mL-puE"/>
+                                                <constraint firstItem="Xoj-Pu-QDM" firstAttribute="leading" secondItem="WvH-bv-YMh" secondAttribute="leadingMargin" constant="10" id="W5E-uB-Dss"/>
+                                                <constraint firstItem="n87-l1-Mig" firstAttribute="centerX" secondItem="VsN-W1-6xU" secondAttribute="centerX" id="Ygt-MU-Q3j"/>
+                                                <constraint firstItem="2TJ-zM-yTV" firstAttribute="top" secondItem="WvH-bv-YMh" secondAttribute="topMargin" id="ikl-gg-Niw"/>
+                                                <constraint firstItem="Z0F-L1-saB" firstAttribute="bottom" secondItem="WvH-bv-YMh" secondAttribute="bottomMargin" id="nHD-HA-TJI"/>
+                                                <constraint firstItem="hio-2G-a4u" firstAttribute="trailing" secondItem="WvH-bv-YMh" secondAttribute="trailingMargin" id="oh3-ax-xtu"/>
+                                                <constraint firstItem="n87-l1-Mig" firstAttribute="top" secondItem="WvH-bv-YMh" secondAttribute="topMargin" id="w5f-gE-aWN"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="nHD-HA-TJI"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Friday" id="3yj-WX-6s5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="ELH-av-p2i">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ELH-av-p2i" id="meT-Q2-8cT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhk-IK-S2M">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="G08-gj-P2G"/>
+                                                        <constraint firstAttribute="height" constant="33" id="OvF-89-Gpm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFy-KO-ROI">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="dTo-fb-u5Y"/>
+                                                        <constraint firstAttribute="width" constant="80" id="jsu-dq-nY7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHu-b7-ptL">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="2hi-hn-xO2"/>
+                                                        <constraint firstAttribute="width" constant="60" id="ejf-Ht-iep"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaU-nG-bbm">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="6SU-yl-lUT"/>
+                                                        <constraint firstAttribute="height" constant="22" id="o3W-HA-c9l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KL-Xs-EDv">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="KuT-P8-nQP"/>
+                                                        <constraint firstAttribute="width" constant="80" id="wk5-XV-oRP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-g6-gOF">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="OJR-04-ios"/>
+                                                        <constraint firstAttribute="height" constant="33" id="Z3T-Dt-tV2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8KL-Xs-EDv" firstAttribute="trailing" secondItem="meT-Q2-8cT" secondAttribute="trailingMargin" id="7hM-Vn-jbn"/>
+                                                <constraint firstItem="KHu-b7-ptL" firstAttribute="top" secondItem="meT-Q2-8cT" secondAttribute="topMargin" id="8LJ-Fk-w5d"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8KL-Xs-EDv" secondAttribute="bottom" id="EWr-zc-heE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SaU-nG-bbm" secondAttribute="bottom" id="EuF-s1-ezM"/>
+                                                <constraint firstAttribute="centerX" secondItem="SBO-g6-gOF" secondAttribute="centerX" id="OhD-c5-3p1"/>
+                                                <constraint firstAttribute="centerY" secondItem="SBO-g6-gOF" secondAttribute="centerY" constant="15" id="Spa-LE-bYR"/>
+                                                <constraint firstItem="YFy-KO-ROI" firstAttribute="bottom" secondItem="meT-Q2-8cT" secondAttribute="bottomMargin" id="Wlg-qD-oux"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KHu-b7-ptL" secondAttribute="trailing" constant="10" id="aXQ-JC-psc"/>
+                                                <constraint firstItem="SBO-g6-gOF" firstAttribute="top" secondItem="meT-Q2-8cT" secondAttribute="topMargin" id="cX9-oa-vWl"/>
+                                                <constraint firstItem="Fhk-IK-S2M" firstAttribute="leading" secondItem="meT-Q2-8cT" secondAttribute="leadingMargin" constant="10" id="giS-Gx-gzw"/>
+                                                <constraint firstItem="SBO-g6-gOF" firstAttribute="centerX" secondItem="SaU-nG-bbm" secondAttribute="centerX" id="poI-rM-u2r"/>
+                                                <constraint firstItem="YFy-KO-ROI" firstAttribute="bottom" secondItem="meT-Q2-8cT" secondAttribute="bottomMargin" id="rq4-TJ-fPC"/>
+                                                <constraint firstItem="YFy-KO-ROI" firstAttribute="leading" secondItem="meT-Q2-8cT" secondAttribute="leadingMargin" id="vJO-GP-7gf"/>
+                                                <constraint firstItem="Fhk-IK-S2M" firstAttribute="top" secondItem="meT-Q2-8cT" secondAttribute="topMargin" id="vs2-Sw-kDX"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="rq4-TJ-fPC"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Saturday" id="hdF-Hi-pns">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="9hO-X9-H0u">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hO-X9-H0u" id="zBE-a5-QRi">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-sc-e7E">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="l6d-SL-lAB"/>
+                                                        <constraint firstAttribute="height" constant="33" id="sgG-dZ-Q1N"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7r-6b-W19">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="HPS-6t-BMB"/>
+                                                        <constraint firstAttribute="width" constant="80" id="LbM-ih-5bJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-OV-m8S">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="GXU-LY-Z10"/>
+                                                        <constraint firstAttribute="width" constant="60" id="HWi-Fv-g6j"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIA-sR-tLq">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Fyr-3J-cgy"/>
+                                                        <constraint firstAttribute="height" constant="22" id="JL0-Zr-C9w"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-9Z-VxS">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="45T-cT-NhY"/>
+                                                        <constraint firstAttribute="height" constant="22" id="m8z-zC-fIj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKx-yR-TAK">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="7yk-fY-GIu"/>
+                                                        <constraint firstAttribute="height" constant="33" id="KeQ-ni-So2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UKx-yR-TAK" firstAttribute="top" secondItem="zBE-a5-QRi" secondAttribute="topMargin" id="5lz-H2-WHT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YIA-sR-tLq" secondAttribute="bottom" id="75M-8F-BXG"/>
+                                                <constraint firstItem="Wej-9Z-VxS" firstAttribute="trailing" secondItem="zBE-a5-QRi" secondAttribute="trailingMargin" id="Boa-yb-EZo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wej-9Z-VxS" secondAttribute="bottom" id="HKN-IW-ERy"/>
+                                                <constraint firstItem="P7r-6b-W19" firstAttribute="bottom" secondItem="zBE-a5-QRi" secondAttribute="bottomMargin" id="MEs-Ik-zgE"/>
+                                                <constraint firstItem="b0j-OV-m8S" firstAttribute="top" secondItem="zBE-a5-QRi" secondAttribute="topMargin" id="MWt-fO-wsx"/>
+                                                <constraint firstAttribute="centerX" secondItem="UKx-yR-TAK" secondAttribute="centerX" id="UyZ-SJ-g0r"/>
+                                                <constraint firstItem="UKx-yR-TAK" firstAttribute="centerX" secondItem="YIA-sR-tLq" secondAttribute="centerX" id="d06-uN-bZ7"/>
+                                                <constraint firstItem="pdo-sc-e7E" firstAttribute="top" secondItem="zBE-a5-QRi" secondAttribute="topMargin" id="pFJ-Ur-2KR"/>
+                                                <constraint firstItem="pdo-sc-e7E" firstAttribute="leading" secondItem="zBE-a5-QRi" secondAttribute="leadingMargin" constant="10" id="qd3-dh-Kpv"/>
+                                                <constraint firstItem="P7r-6b-W19" firstAttribute="leading" secondItem="zBE-a5-QRi" secondAttribute="leadingMargin" id="sIT-5e-o2Y"/>
+                                                <constraint firstItem="P7r-6b-W19" firstAttribute="bottom" secondItem="zBE-a5-QRi" secondAttribute="bottomMargin" id="sgJ-Tr-nxd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="b0j-OV-m8S" secondAttribute="trailing" constant="10" id="uxY-Bv-Mzw"/>
+                                                <constraint firstAttribute="centerY" secondItem="UKx-yR-TAK" secondAttribute="centerY" constant="15" id="wtu-aq-78P"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="sgJ-Tr-nxd"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Sunday" id="3fs-fh-ayu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VWq-dh-LnB">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWq-dh-LnB" id="Qj5-2m-5eu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DL6-xH-qak">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="S8v-OS-BaZ"/>
+                                                        <constraint firstAttribute="height" constant="33" id="cYG-em-3JE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-vK-j1P">
+                                                    <rect key="frame" x="8" y="49" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Ltg-Sk-zho"/>
+                                                        <constraint firstAttribute="height" constant="22" id="dbd-kI-jK5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-c7-Moi">
+                                                    <rect key="frame" x="517" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="CM0-QN-EGc"/>
+                                                        <constraint firstAttribute="width" constant="60" id="DBj-Hp-qXM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT9-xe-Gnc">
+                                                    <rect key="frame" x="260" y="48" width="80" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="87G-9n-goP"/>
+                                                        <constraint firstAttribute="width" constant="80" id="mfn-ww-W4F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8r-Et-JLI">
+                                                    <rect key="frame" x="512" y="48" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="4bU-Du-1tJ"/>
+                                                        <constraint firstAttribute="width" constant="80" id="cxi-H0-4SH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-AI-xkj">
+                                                    <rect key="frame" x="270" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="7Ok-OG-nOL"/>
+                                                        <constraint firstAttribute="height" constant="33" id="iUr-tB-DVV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="wcn-AI-xkj" secondAttribute="centerY" constant="15" id="6Bg-mm-ody"/>
+                                                <constraint firstItem="wcn-AI-xkj" firstAttribute="centerX" secondItem="ZT9-xe-Gnc" secondAttribute="centerX" id="9iC-jW-rjf"/>
+                                                <constraint firstItem="8p6-vK-j1P" firstAttribute="bottom" secondItem="Qj5-2m-5eu" secondAttribute="bottomMargin" id="Go2-Db-DNW"/>
+                                                <constraint firstItem="DL6-xH-qak" firstAttribute="top" secondItem="Qj5-2m-5eu" secondAttribute="topMargin" id="NfW-Zw-r6u"/>
+                                                <constraint firstItem="Zu4-c7-Moi" firstAttribute="top" secondItem="Qj5-2m-5eu" secondAttribute="topMargin" id="PNF-lx-oC0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZT9-xe-Gnc" secondAttribute="bottom" id="PYH-YC-bvc"/>
+                                                <constraint firstItem="DL6-xH-qak" firstAttribute="leading" secondItem="Qj5-2m-5eu" secondAttribute="leadingMargin" constant="10" id="Sg7-3A-mDE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zu4-c7-Moi" secondAttribute="trailing" constant="10" id="ZdD-4C-fvZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="K8r-Et-JLI" secondAttribute="bottom" id="cNT-ZV-aEB"/>
+                                                <constraint firstItem="8p6-vK-j1P" firstAttribute="leading" secondItem="Qj5-2m-5eu" secondAttribute="leadingMargin" id="dNP-Ty-D6j"/>
+                                                <constraint firstAttribute="centerX" secondItem="wcn-AI-xkj" secondAttribute="centerX" id="eC9-Yy-3QK"/>
+                                                <constraint firstItem="8p6-vK-j1P" firstAttribute="bottom" secondItem="Qj5-2m-5eu" secondAttribute="bottomMargin" id="nEN-z8-So6"/>
+                                                <constraint firstItem="K8r-Et-JLI" firstAttribute="trailing" secondItem="Qj5-2m-5eu" secondAttribute="trailingMargin" id="tyL-MK-1WC"/>
+                                                <constraint firstItem="wcn-AI-xkj" firstAttribute="top" secondItem="Qj5-2m-5eu" secondAttribute="topMargin" id="wQX-ev-43v"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Go2-Db-DNW"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="d9k-T2-oS5" id="E8o-8U-f5m"/>
+                            <outlet property="delegate" destination="d9k-T2-oS5" id="lbE-FI-00A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Feelings" id="OKM-E1-xv1"/>
+                    <connections>
+                        <outlet property="emojiMo1" destination="MhG-Z0-rxh" id="eYK-Yf-wXN"/>
+                        <outlet property="emojiMo2" destination="o0P-uP-6Y8" id="QyA-dY-Drd"/>
+                        <outlet property="emojiMo3" destination="0zk-t7-wxG" id="rll-Ap-pX9"/>
+                        <outlet property="emojiTu1" destination="MhG-Z0-rxh" id="zaD-Rd-xhg"/>
+                        <outlet property="emojiTu2" destination="gHU-WK-lsh" id="YYm-i5-thi"/>
+                        <outlet property="emojiTu3" destination="v5X-A8-wgO" id="fPC-PM-cl0"/>
+                        <outlet property="tempMo1" destination="nYU-xg-TNQ" id="tgh-7H-om3"/>
+                        <outlet property="tempMo2" destination="DZo-JL-Ddw" id="6cw-q3-uhf"/>
+                        <outlet property="tempMo3" destination="IsQ-tN-pFk" id="eiL-0N-PjX"/>
+                        <outlet property="tempTu1" destination="cHF-HI-UnZ" id="DJd-zo-yJz"/>
+                        <outlet property="tempTu2" destination="UU6-sH-Ki2" id="Oxt-vw-DyM"/>
+                        <outlet property="tempTu3" destination="oaB-iM-ga8" id="nd4-Ax-DUC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0D-pT-72K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1003" y="264"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hp0-j2-qQH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ba5-hs-3Eh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ika-Px-tc0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d9k-T2-oS5" kind="relationship" relationship="rootViewController" id="u2B-cO-L50"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFF-76-jUl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="239"/>
         </scene>
     </scenes>
 </document>

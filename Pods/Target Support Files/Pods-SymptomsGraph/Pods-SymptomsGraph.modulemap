@@ -1,0 +1,6 @@
+framework module Pods_SymptomsGraph {
+  umbrella header "Pods-SymptomsGraph-umbrella.h"
+
+  export *
+  module * { export * }
+}
