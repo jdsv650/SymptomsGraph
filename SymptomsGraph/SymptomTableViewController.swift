@@ -23,10 +23,46 @@ class SymptomTableViewController: UITableViewController {
     @IBOutlet weak var tempTu1: UILabel!
     @IBOutlet weak var tempTu2: UILabel!
     @IBOutlet weak var tempTu3: UILabel!
+    @IBOutlet weak var emojiWe1: UILabel!
+    @IBOutlet weak var emojiWe2: UILabel!
+    @IBOutlet weak var emojiWe3: UILabel!
+    @IBOutlet weak var tempWe1: UILabel!
+    @IBOutlet weak var tempWe2: UILabel!
+    @IBOutlet weak var tempWe3: UILabel!
+    @IBOutlet weak var emojiTh1: UILabel!
+    @IBOutlet weak var emojiTh2: UILabel!
+    @IBOutlet weak var emojiTh3: UILabel!
+    @IBOutlet weak var tempTh1: UILabel!
+    @IBOutlet weak var tempTh2: UILabel!
+    @IBOutlet weak var tempTh3: UILabel!
+    @IBOutlet weak var emojiFr1: UILabel!
+    @IBOutlet weak var emojiFr2: UILabel!
+    @IBOutlet weak var emojiFr3: UILabel!
+    @IBOutlet weak var tempFr1: UILabel!
+    @IBOutlet weak var tempFr2: UILabel!
+    @IBOutlet weak var tempFr3: UILabel!
+    @IBOutlet weak var emojiSa1: UILabel!
+    @IBOutlet weak var emojiSa2: UILabel!
+    @IBOutlet weak var emoji3Sa: UILabel!
+    @IBOutlet weak var tempSa1: UILabel!
+    @IBOutlet weak var tempSa2: UILabel!
+    @IBOutlet weak var tempSa3: UILabel!
+    @IBOutlet weak var emojiSu1: UILabel!
+    @IBOutlet weak var emojiSu2: UILabel!
+    @IBOutlet weak var emojiSu3: UILabel!
+    @IBOutlet weak var tempSu1: UILabel!
+    @IBOutlet weak var tempSu2: UILabel!
+    @IBOutlet weak var tempSu3: UILabel!
+    
     
     var feelings = ["Happy": "😀", "Achy": "😢", "Sick":"😷", "Tired":"😫", "Acute":"😭"]
     var mondayCount = 0
     var tuesdayCount = 0
+    var wednesdayCount = 0
+    var thursdayCount = 0
+    var fridayCount = 0
+    var saturdayCount = 0
+    var sundayCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +133,7 @@ class SymptomTableViewController: UITableViewController {
                                 self.mondayCount++
                                 println(self.mondayCount)
                                 
-                                case "Thursday":
+                                case "Tuesday":
                                 
                                     if self.tuesdayCount == 0
                                     {
@@ -118,8 +154,44 @@ class SymptomTableViewController: UITableViewController {
                                 self.tuesdayCount++
                                 
                                 case "Wednesday":
+                                    
+                                    if self.wednesdayCount == 0
+                                    {
+                                        self.emojiWe1.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempWe1.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    else if self.wednesdayCount == 1
+                                    {
+                                        self.emojiWe2.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempWe2.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    else if self.wednesdayCount == 2
+                                    {
+                                        self.emojiWe3.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempWe3.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    
+                                    self.wednesdayCount++
                                     println()
                                 case "Thursday":
+                                    
+                                    if self.thursdayCount == 0
+                                    {
+                                        self.emojiTh1.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempTh1.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    else if self.thursdayCount == 1
+                                    {
+                                        self.emojiTh2.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempTh2.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    else if self.thursdayCount == 2
+                                    {
+                                        self.emojiTh3.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempTh3.text = (data["Temp"]! as? Double)!.toString()
+                                    }
+                                    
+                                    self.thursdayCount++
                                     println()
                                 case "Friday":
                                     println()

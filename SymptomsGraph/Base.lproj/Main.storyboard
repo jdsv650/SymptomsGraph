@@ -114,16 +114,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1mM-zr-pwY" id="VGA-c8-wwE">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-Z0-rxh">
-                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="KDc-XE-rGD"/>
-                                                        <constraint firstAttribute="height" constant="33" id="lsU-rf-X2r"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.8 ℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-HI-UnZ">
                                                     <rect key="frame" x="8" y="49" width="80" height="22"/>
                                                     <constraints>
@@ -169,6 +159,16 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="GtT-A7-d4p"/>
                                                         <constraint firstAttribute="width" constant="60" id="qPV-9J-pN4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-Z0-rxh">
+                                                    <rect key="frame" x="18" y="8" width="60" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="KDc-XE-rGD"/>
+                                                        <constraint firstAttribute="height" constant="33" id="lsU-rf-X2r"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="35"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -673,23 +673,44 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Feelings" id="OKM-E1-xv1"/>
                     <connections>
+                        <outlet property="emoji3Sa" destination="b0j-OV-m8S" id="9Bu-bS-NkO"/>
+                        <outlet property="emojiFr1" destination="Fhk-IK-S2M" id="cK8-dW-WxD"/>
+                        <outlet property="emojiFr2" destination="SBO-g6-gOF" id="NrA-BT-raL"/>
+                        <outlet property="emojiFr3" destination="KHu-b7-ptL" id="jyi-mu-IKc"/>
                         <outlet property="emojiMo1" destination="MhG-Z0-rxh" id="eYK-Yf-wXN"/>
                         <outlet property="emojiMo2" destination="o0P-uP-6Y8" id="QyA-dY-Drd"/>
                         <outlet property="emojiMo3" destination="0zk-t7-wxG" id="rll-Ap-pX9"/>
+                        <outlet property="emojiSa1" destination="pdo-sc-e7E" id="Hdo-2w-Ez4"/>
+                        <outlet property="emojiSa2" destination="UKx-yR-TAK" id="IvH-Th-nTo"/>
+                        <outlet property="emojiTh1" destination="Xoj-Pu-QDM" id="ikm-aY-gDo"/>
+                        <outlet property="emojiTh2" destination="n87-l1-Mig" id="3SF-zp-qIS"/>
+                        <outlet property="emojiTh3" destination="2TJ-zM-yTV" id="Vnp-bF-10s"/>
                         <outlet property="emojiTu1" destination="MhG-Z0-rxh" id="zaD-Rd-xhg"/>
                         <outlet property="emojiTu2" destination="gHU-WK-lsh" id="YYm-i5-thi"/>
                         <outlet property="emojiTu3" destination="v5X-A8-wgO" id="fPC-PM-cl0"/>
+                        <outlet property="emojiWe1" destination="MBl-4c-jZb" id="Kgr-1w-f3f"/>
+                        <outlet property="emojiWe2" destination="GGw-nv-hMm" id="Fsd-uj-hxa"/>
+                        <outlet property="emojiWe3" destination="UtE-rW-QMe" id="FpQ-Oa-giO"/>
+                        <outlet property="tempFr1" destination="YFy-KO-ROI" id="O0I-u1-6gh"/>
+                        <outlet property="tempFr2" destination="SaU-nG-bbm" id="lkZ-KI-wmA"/>
+                        <outlet property="tempFr3" destination="8KL-Xs-EDv" id="cno-NC-3R5"/>
                         <outlet property="tempMo1" destination="nYU-xg-TNQ" id="tgh-7H-om3"/>
                         <outlet property="tempMo2" destination="DZo-JL-Ddw" id="6cw-q3-uhf"/>
                         <outlet property="tempMo3" destination="IsQ-tN-pFk" id="eiL-0N-PjX"/>
+                        <outlet property="tempTh1" destination="Z0F-L1-saB" id="0tf-4u-fT8"/>
+                        <outlet property="tempTh2" destination="VsN-W1-6xU" id="k0a-e6-ZeE"/>
+                        <outlet property="tempTh3" destination="hio-2G-a4u" id="ibb-1q-XfC"/>
                         <outlet property="tempTu1" destination="cHF-HI-UnZ" id="DJd-zo-yJz"/>
                         <outlet property="tempTu2" destination="UU6-sH-Ki2" id="Oxt-vw-DyM"/>
                         <outlet property="tempTu3" destination="oaB-iM-ga8" id="nd4-Ax-DUC"/>
+                        <outlet property="tempWe1" destination="XA4-Xm-5uJ" id="Ok0-uz-DhR"/>
+                        <outlet property="tempWe2" destination="S6O-K0-ZOn" id="eLP-9L-IL5"/>
+                        <outlet property="tempWe3" destination="64b-5a-zNs" id="8R1-CW-QxN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0D-pT-72K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="264"/>
+            <point key="canvasLocation" x="996" y="264"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hp0-j2-qQH">
