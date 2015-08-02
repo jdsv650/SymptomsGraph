@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2CC1AB4E-642A-4CEE-9FD3-29AE110A7F72</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SymptomsGraph</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2213E6F8F101991D254700988735D6D8FD37083D</key>
+		<string>https://github.com/jdsv650/SymptomsGraph.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SymptomsGraph.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2213E6F8F101991D254700988735D6D8FD37083D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jdsv650/SymptomsGraph.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2213E6F8F101991D254700988735D6D8FD37083D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2213E6F8F101991D254700988735D6D8FD37083D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SymptomsGraph</string>
+		</dict>
+	</array>
+</dict>
+</plist>

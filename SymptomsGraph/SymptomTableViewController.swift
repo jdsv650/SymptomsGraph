@@ -43,7 +43,7 @@ class SymptomTableViewController: UITableViewController {
     @IBOutlet weak var tempFr3: UILabel!
     @IBOutlet weak var emojiSa1: UILabel!
     @IBOutlet weak var emojiSa2: UILabel!
-    @IBOutlet weak var emoji3Sa: UILabel!
+    @IBOutlet weak var emojiSa3: UILabel!
     @IBOutlet weak var tempSa1: UILabel!
     @IBOutlet weak var tempSa2: UILabel!
     @IBOutlet weak var tempSa3: UILabel!
@@ -54,8 +54,7 @@ class SymptomTableViewController: UITableViewController {
     @IBOutlet weak var tempSu2: UILabel!
     @IBOutlet weak var tempSu3: UILabel!
     
-    
-    var feelings = ["Happy": "😀", "Achy": "😢", "Sick":"😷", "Tired":"😫", "Acute":"😭"]
+    var feelings = ["Happy": "😀", "Achy": "😧", "Sick":"😷", "Tired":"😫", "Acute":"😡"]
     var mondayCount = 0
     var tuesdayCount = 0
     var wednesdayCount = 0
@@ -67,19 +66,60 @@ class SymptomTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        clearLabels()
         getLocalData()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
-
+    
+    func clearLabels()
+    {
+        emojiMo1.text = ""
+        emojiMo2.text = ""
+        emojiMo3.text = ""
+        tempMo1.text = ""
+        tempMo2.text = ""
+        tempMo3.text = ""
+        emojiTu1.text = ""
+        emojiTu2.text = ""
+        emojiTu3.text = ""
+        tempTu1.text = ""
+        tempTu2.text = ""
+        tempTu3.text = ""
+        emojiWe1.text = ""
+        emojiWe2.text = ""
+        emojiWe3.text = ""
+        tempWe1.text = ""
+        tempWe2.text = ""
+        tempWe3.text = ""
+        emojiTh1.text = ""
+        emojiTh2.text = ""
+        emojiTh3.text = ""
+        tempTh1.text = ""
+        tempTh2.text = ""
+        tempTh3.text = ""
+        emojiFr1.text = ""
+        emojiFr2.text = ""
+        emojiFr3.text = ""
+        tempFr1.text = ""
+        tempFr2.text = ""
+        tempFr3.text = ""
+        emojiSa1.text = ""
+        emojiSa2.text = ""
+        emojiSa3.text = ""
+        tempSa1.text = ""
+        tempSa2.text = ""
+        tempSa3.text = ""
+        emojiSu1.text = ""
+        emojiSu2.text = ""
+        emojiSu3.text = ""
+        tempSu1.text = ""
+        tempSu2.text = ""
+        tempSu3.text = ""
+    }
     
     func getLocalData()
     {
-        var path = NSBundle.mainBundle().pathForResource("graphsymptoms", ofType: "json")
+        var path = NSBundle.mainBundle().pathForResource("graphsymptoms2", ofType: "json")
         var localFileUrl = NSURL.fileURLWithPath(path!)!
         
         Alamofire.request(.GET, localFileUrl).responseJSON(options: NSJSONReadingOptions.MutableContainers)
@@ -117,38 +157,37 @@ class SymptomTableViewController: UITableViewController {
                                 if self.mondayCount == 0
                                 {
                                     self.emojiMo1.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo1.text = (data["Temp"]! as? Double)!.toString()
+                                    self.tempMo1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                 }
                                 else if self.mondayCount == 1
                                 {
                                     self.emojiMo2.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo2.text = (data["Temp"]! as? Double)!.toString()
+                                    self.tempMo2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                 }
                                 else if self.mondayCount == 2
                                 {
                                     self.emojiMo3.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo3.text = (data["Temp"]! as? Double)!.toString()
+                                    self.tempMo3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                 }
                                 
                                 self.mondayCount++
-                                println(self.mondayCount)
                                 
                                 case "Tuesday":
                                 
                                     if self.tuesdayCount == 0
                                     {
                                         self.emojiTu1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu1.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTu1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.tuesdayCount == 1
                                     {
                                         self.emojiTu2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu2.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTu2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.tuesdayCount == 2
                                     {
                                         self.emojiTu3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu3.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTu3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                 
                                 self.tuesdayCount++
@@ -158,47 +197,101 @@ class SymptomTableViewController: UITableViewController {
                                     if self.wednesdayCount == 0
                                     {
                                         self.emojiWe1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe1.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempWe1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.wednesdayCount == 1
                                     {
                                         self.emojiWe2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe2.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempWe2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.wednesdayCount == 2
                                     {
                                         self.emojiWe3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe3.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempWe3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     
                                     self.wednesdayCount++
-                                    println()
+                               
                                 case "Thursday":
                                     
                                     if self.thursdayCount == 0
                                     {
                                         self.emojiTh1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh1.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTh1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.thursdayCount == 1
                                     {
                                         self.emojiTh2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh2.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTh2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     else if self.thursdayCount == 2
                                     {
                                         self.emojiTh3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh3.text = (data["Temp"]! as? Double)!.toString()
+                                        self.tempTh3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
                                     }
                                     
                                     self.thursdayCount++
-                                    println()
+                               
                                 case "Friday":
-                                    println()
+                                
+                                    if self.fridayCount == 0
+                                    {
+                                        self.emojiFr1.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempFr1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.fridayCount == 1
+                                    {
+                                        self.emojiFr2.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempFr2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.fridayCount == 2
+                                    {
+                                        self.emojiFr3.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempFr3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    
+                                    self.fridayCount++
+                                
                                 case "Saturday":
-                                    println()
+                                    
+                                    if self.saturdayCount == 0
+                                    {
+                                        self.emojiSa1.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSa1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.saturdayCount == 1
+                                    {
+                                        self.emojiSa2.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSa2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.saturdayCount == 2
+                                    {
+                                        self.emojiSa3.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSa3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    
+                                    self.saturdayCount++
+                                
                                 case "Sunday":
-                                    println()
+                                
+                                    if self.sundayCount == 0
+                                    {
+                                        self.emojiSu1.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSu1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.sundayCount == 1
+                                    {
+                                        self.emojiSu2.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSu2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    else if self.sundayCount == 2
+                                    {
+                                        self.emojiSu3.text = self.feelings[(data["Feelings"] as? String)!]
+                                        self.tempSu3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                                    }
+                                    
+                                    self.sundayCount++
+                                
                             default:
                                 println()
                             }
@@ -206,76 +299,10 @@ class SymptomTableViewController: UITableViewController {
                     }
                 }
                 
-                
-                return // don't try to get token info it failed so just exit
+                return
                 
         } // End Alamofire.request
     }
-
-
-  //  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-   // let cell = super.tableView.cellForRowAtIndexPath(indexPath)
-    
-    // Configure the cell...
-    
-  //  var section = indexPath.section
-  //  var row = indexPath.row
-    
-   // if row == 1 // Monday
-   // {
-    
-   // }
-    
-   // return cell!
-    
-  //  }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

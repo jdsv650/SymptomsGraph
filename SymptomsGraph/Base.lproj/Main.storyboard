@@ -673,19 +673,22 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Feelings" id="OKM-E1-xv1"/>
                     <connections>
-                        <outlet property="emoji3Sa" destination="b0j-OV-m8S" id="9Bu-bS-NkO"/>
                         <outlet property="emojiFr1" destination="Fhk-IK-S2M" id="cK8-dW-WxD"/>
                         <outlet property="emojiFr2" destination="SBO-g6-gOF" id="NrA-BT-raL"/>
                         <outlet property="emojiFr3" destination="KHu-b7-ptL" id="jyi-mu-IKc"/>
-                        <outlet property="emojiMo1" destination="MhG-Z0-rxh" id="eYK-Yf-wXN"/>
+                        <outlet property="emojiMo1" destination="iml-7Q-dQQ" id="qqc-6C-g4f"/>
                         <outlet property="emojiMo2" destination="o0P-uP-6Y8" id="QyA-dY-Drd"/>
                         <outlet property="emojiMo3" destination="0zk-t7-wxG" id="rll-Ap-pX9"/>
                         <outlet property="emojiSa1" destination="pdo-sc-e7E" id="Hdo-2w-Ez4"/>
                         <outlet property="emojiSa2" destination="UKx-yR-TAK" id="IvH-Th-nTo"/>
+                        <outlet property="emojiSa3" destination="b0j-OV-m8S" id="eHA-XG-mkt"/>
+                        <outlet property="emojiSu1" destination="DL6-xH-qak" id="QYX-5j-3V8"/>
+                        <outlet property="emojiSu2" destination="wcn-AI-xkj" id="4kd-xe-xGA"/>
+                        <outlet property="emojiSu3" destination="Zu4-c7-Moi" id="WJt-gy-bSG"/>
                         <outlet property="emojiTh1" destination="Xoj-Pu-QDM" id="ikm-aY-gDo"/>
                         <outlet property="emojiTh2" destination="n87-l1-Mig" id="3SF-zp-qIS"/>
                         <outlet property="emojiTh3" destination="2TJ-zM-yTV" id="Vnp-bF-10s"/>
-                        <outlet property="emojiTu1" destination="MhG-Z0-rxh" id="zaD-Rd-xhg"/>
+                        <outlet property="emojiTu1" destination="MhG-Z0-rxh" id="bF0-aZ-SdE"/>
                         <outlet property="emojiTu2" destination="gHU-WK-lsh" id="YYm-i5-thi"/>
                         <outlet property="emojiTu3" destination="v5X-A8-wgO" id="fPC-PM-cl0"/>
                         <outlet property="emojiWe1" destination="MBl-4c-jZb" id="Kgr-1w-f3f"/>
@@ -697,6 +700,12 @@
                         <outlet property="tempMo1" destination="nYU-xg-TNQ" id="tgh-7H-om3"/>
                         <outlet property="tempMo2" destination="DZo-JL-Ddw" id="6cw-q3-uhf"/>
                         <outlet property="tempMo3" destination="IsQ-tN-pFk" id="eiL-0N-PjX"/>
+                        <outlet property="tempSa1" destination="P7r-6b-W19" id="60w-U1-oh2"/>
+                        <outlet property="tempSa2" destination="YIA-sR-tLq" id="1mk-6S-NC5"/>
+                        <outlet property="tempSa3" destination="Wej-9Z-VxS" id="Jyl-zu-Gm0"/>
+                        <outlet property="tempSu1" destination="8p6-vK-j1P" id="pLn-YM-zfS"/>
+                        <outlet property="tempSu2" destination="ZT9-xe-Gnc" id="cDT-Jy-iCK"/>
+                        <outlet property="tempSu3" destination="K8r-Et-JLI" id="H5z-gz-O7a"/>
                         <outlet property="tempTh1" destination="Z0F-L1-saB" id="0tf-4u-fT8"/>
                         <outlet property="tempTh2" destination="VsN-W1-6xU" id="k0a-e6-ZeE"/>
                         <outlet property="tempTh3" destination="hio-2G-a4u" id="ibb-1q-XfC"/>
