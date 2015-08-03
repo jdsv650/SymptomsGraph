@@ -112,8 +112,8 @@
 		1AF57E081B6D53A30079E547 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1A84AB831B6ED8A8000861A5 /* graphsymptoms2.json */,
 				1A63AD271B6D672900B76C84 /* graphsymptoms.json */,
+				1A84AB831B6ED8A8000861A5 /* graphsymptoms2.json */,
 				1A84AB8B1B6EDE8A000861A5 /* info_icon_b.png */,
 				1AF57E091B6D53A30079E547 /* Info.plist */,
 			);

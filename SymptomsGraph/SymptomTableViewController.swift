@@ -72,7 +72,7 @@ class SymptomTableViewController: UITableViewController {
     
     func getLocalData()
     {
-        var path = NSBundle.mainBundle().pathForResource("graphsymptoms2", ofType: "json")
+        var path = NSBundle.mainBundle().pathForResource("graphsymptoms", ofType: "json")
         var localFileUrl: NSURL
         
         // See if we can find the local json file
