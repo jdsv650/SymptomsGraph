@@ -7,17 +7,17 @@
 //
 
 import UIKit
-import Alamofire
+import Alamofire  // for network/local (JSON) request
 
 class SymptomTableViewController: UITableViewController {
 
-    @IBOutlet weak var emojiMo1: UILabel!
-    @IBOutlet weak var emojiMo2: UILabel!
-    @IBOutlet weak var emojiMo3: UILabel!
-    @IBOutlet weak var tempMo1: UILabel!
-    @IBOutlet weak var tempMo2: UILabel!
-    @IBOutlet weak var tempMo3: UILabel!
-    @IBOutlet weak var emojiTu1: UILabel!
+    @IBOutlet weak var emojiMo1: UILabel!  // emoji Monday 1
+    @IBOutlet weak var emojiMo2: UILabel!  // emoji Monday 2
+    @IBOutlet weak var emojiMo3: UILabel!  // emoji Monday 3
+    @IBOutlet weak var tempMo1: UILabel!   // Temperature Monday 1
+    @IBOutlet weak var tempMo2: UILabel!   // Temperature Monday 2
+    @IBOutlet weak var tempMo3: UILabel!   // Temperature Monday 3
+    @IBOutlet weak var emojiTu1: UILabel!  // ...
     @IBOutlet weak var emojiTu2: UILabel!
     @IBOutlet weak var emojiTu3: UILabel!
     @IBOutlet weak var tempTu1: UILabel!
@@ -55,8 +55,8 @@ class SymptomTableViewController: UITableViewController {
     @IBOutlet weak var tempSu3: UILabel!
     
     var feelings = ["Happy": "😀", "Achy": "😧", "Sick":"😷", "Tired":"😫", "Acute":"😡"]
-    var mondayCount = 0
-    var tuesdayCount = 0
+    var mondayCount = 0      // track number of times Monday is found in json
+    var tuesdayCount = 0     // ...                   Tuesday ...
     var wednesdayCount = 0
     var thursdayCount = 0
     var fridayCount = 0
@@ -68,20 +68,194 @@ class SymptomTableViewController: UITableViewController {
         
         clearLabels()
         getLocalData()
-        
     }
     
-    
-    @IBAction func infoPressed(sender: UIBarButtonItem)
+    func getLocalData()
     {
-        var message = " 😀 Happy 😀\n\n😧 Achy 😧\n\n😷 Sick 😷\n\n😫 Tired 😫\n\n😡 Acute 😡"
-        var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-        alert.addAction(action)
+        var path = NSBundle.mainBundle().pathForResource("graphsymptoms2", ofType: "json")
+        var localFileUrl: NSURL
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        // See if we can find the local json file
+        if let thepath = path
+        {
+            localFileUrl = NSURL.fileURLWithPath(thepath)!
+        }
+        else
+        {
+            showPopup("Error", message: "Unable to read data")
+            return
+        }
+        
+        // go ahead and read the json file using Alamofire
+        Alamofire.request(.GET, localFileUrl).responseJSON(options: NSJSONReadingOptions.MutableContainers)
+            { (request, response, data, error) in
+                
+                println(request)
+                println()
+                println(response)
+                println()
+                println(data)
+                println()
+                println(error)
+                println()
+                
+                if(error != nil)
+                {
+                    // bail out - call failed
+                    println(error!.localizedDescription)
+                    self.showPopup("Error", message: error!.localizedDescription)
+                    return
+                }
+               
+                let resultAsJSON = data as! NSArray
+                if let SymptomDictionary = resultAsJSON[0] as? NSDictionary
+                {
+                    if let symArr = SymptomDictionary["Symptoms"] as? NSArray
+                    {
+                        println(symArr)
+                        for data in symArr
+                        {
+                            var feelings = self.feelings[(data["Feelings"] as? String)!]
+                            var temperature = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                            
+                            switch data["Day"] as! String
+                            {
+                                case "Monday":
+                            
+                                if self.mondayCount == 0
+                                {
+                                    self.setTextForLabels(self.emojiMo1, temperatureLabel: self.tempMo1, emoji: feelings!, temperature: temperature)
+                                }
+                                else if self.mondayCount == 1
+                                {
+                                    self.setTextForLabels(self.emojiMo2, temperatureLabel: self.tempMo2, emoji: feelings!, temperature: temperature)
+                                }
+                                else if self.mondayCount == 2
+                                {
+                                    self.setTextForLabels(self.emojiMo3, temperatureLabel: self.tempMo3, emoji: feelings!, temperature: temperature)
+                                }
+                    
+                                self.mondayCount++
+                                
+                                case "Tuesday":
+                                
+                                    if self.tuesdayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiTu1, temperatureLabel: self.tempTu1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.tuesdayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiTu2, temperatureLabel: self.tempTu2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.tuesdayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiTu3, temperatureLabel: self.tempTu3, emoji: feelings!, temperature: temperature)
+                                    }
+                                
+                                self.tuesdayCount++
+                                
+                                case "Wednesday":
+                                    
+                                    if self.wednesdayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiWe1, temperatureLabel: self.tempWe1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.wednesdayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiWe2, temperatureLabel: self.tempWe2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.wednesdayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiWe3, temperatureLabel: self.tempWe3, emoji: feelings!, temperature: temperature)
+                                    }
+                                    
+                                    self.wednesdayCount++
+                               
+                                case "Thursday":
+                                    
+                                    if self.thursdayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiTh1, temperatureLabel: self.tempTh1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.thursdayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiTh2, temperatureLabel: self.tempTh2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.thursdayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiTh3, temperatureLabel: self.tempTh3, emoji: feelings!, temperature: temperature)
+                                    }
+                                    
+                                    self.thursdayCount++
+                               
+                                case "Friday":
+                                
+                                    if self.fridayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiFr1, temperatureLabel: self.tempFr1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.fridayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiFr2, temperatureLabel: self.tempFr2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.fridayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiFr3, temperatureLabel: self.tempFr3, emoji: feelings!, temperature: temperature)
+                                    }
+                                    
+                                    self.fridayCount++
+                                
+                                case "Saturday":
+                                    
+                                    if self.saturdayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiSa1, temperatureLabel: self.tempSa1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.saturdayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiSa2, temperatureLabel: self.tempSa2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.saturdayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiSa3, temperatureLabel: self.tempSa3, emoji: feelings!, temperature: temperature)
+                                    }
+                                    
+                                    self.saturdayCount++
+                                
+                                case "Sunday":
+                                
+                                    if self.sundayCount == 0
+                                    {
+                                        self.setTextForLabels(self.emojiSu1, temperatureLabel: self.tempSu1, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.sundayCount == 1
+                                    {
+                                        self.setTextForLabels(self.emojiSu2, temperatureLabel: self.tempSu2, emoji: feelings!, temperature: temperature)
+                                    }
+                                    else if self.sundayCount == 2
+                                    {
+                                        self.setTextForLabels(self.emojiSu3, temperatureLabel: self.tempSu3, emoji: feelings!, temperature: temperature)
+                                    }
+                                    
+                                    self.sundayCount++
+                                
+                            default:
+                                println()
+                            }
+                        }
+                    }
+                }
+                
+                return
+                
+        } // End Alamofire.request
     }
     
+    func setTextForLabels(emojiLabel: UILabel, temperatureLabel: UILabel, emoji: String, temperature: String)
+    {
+        emojiLabel.text = emoji
+        temperatureLabel.text = temperature + " \u{00B0}F"
+    }
     
     func clearLabels()
     {
@@ -128,197 +302,25 @@ class SymptomTableViewController: UITableViewController {
         tempSu2.text = ""
         tempSu3.text = ""
     }
-    
-    func getLocalData()
-    {
-        var path = NSBundle.mainBundle().pathForResource("graphsymptoms2", ofType: "json")
-        var localFileUrl = NSURL.fileURLWithPath(path!)!
-        
-        Alamofire.request(.GET, localFileUrl).responseJSON(options: NSJSONReadingOptions.MutableContainers)
-            { (request, response, data, error) in
-                
-                println(request)
-                println()
-                println(response)
-                println()
-                println(data)
-                println()
-                println(error)
-                println()
-                
-                if(error != nil)
-                {
-                    println(error!.localizedDescription)
-                    // bail out
-                    
-                    return
-                }
-               
-                let resultAsJSON = data as! NSArray
-                if let SymptomDictionary = resultAsJSON[0] as? NSDictionary
-                {
-                    if let symArr = SymptomDictionary["Symptoms"] as? NSArray
-                    {
-                        println(symArr)
-                        for data in symArr
-                        {
-                            switch data["Day"] as! String
-                            {
-                                case "Monday":
-                            
-                                if self.mondayCount == 0
-                                {
-                                    self.emojiMo1.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                }
-                                else if self.mondayCount == 1
-                                {
-                                    self.emojiMo2.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                }
-                                else if self.mondayCount == 2
-                                {
-                                    self.emojiMo3.text = self.feelings[(data["Feelings"] as? String)!]
-                                    self.tempMo3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                }
-                                
-                                self.mondayCount++
-                                
-                                case "Tuesday":
-                                
-                                    if self.tuesdayCount == 0
-                                    {
-                                        self.emojiTu1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.tuesdayCount == 1
-                                    {
-                                        self.emojiTu2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.tuesdayCount == 2
-                                    {
-                                        self.emojiTu3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTu3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                
-                                self.tuesdayCount++
-                                
-                                case "Wednesday":
-                                    
-                                    if self.wednesdayCount == 0
-                                    {
-                                        self.emojiWe1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.wednesdayCount == 1
-                                    {
-                                        self.emojiWe2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.wednesdayCount == 2
-                                    {
-                                        self.emojiWe3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempWe3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    
-                                    self.wednesdayCount++
-                               
-                                case "Thursday":
-                                    
-                                    if self.thursdayCount == 0
-                                    {
-                                        self.emojiTh1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.thursdayCount == 1
-                                    {
-                                        self.emojiTh2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.thursdayCount == 2
-                                    {
-                                        self.emojiTh3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempTh3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    
-                                    self.thursdayCount++
-                               
-                                case "Friday":
-                                
-                                    if self.fridayCount == 0
-                                    {
-                                        self.emojiFr1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempFr1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.fridayCount == 1
-                                    {
-                                        self.emojiFr2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempFr2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.fridayCount == 2
-                                    {
-                                        self.emojiFr3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempFr3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    
-                                    self.fridayCount++
-                                
-                                case "Saturday":
-                                    
-                                    if self.saturdayCount == 0
-                                    {
-                                        self.emojiSa1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSa1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.saturdayCount == 1
-                                    {
-                                        self.emojiSa2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSa2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.saturdayCount == 2
-                                    {
-                                        self.emojiSa3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSa3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    
-                                    self.saturdayCount++
-                                
-                                case "Sunday":
-                                
-                                    if self.sundayCount == 0
-                                    {
-                                        self.emojiSu1.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSu1.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.sundayCount == 1
-                                    {
-                                        self.emojiSu2.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSu2.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    else if self.sundayCount == 2
-                                    {
-                                        self.emojiSu3.text = self.feelings[(data["Feelings"] as? String)!]
-                                        self.tempSu3.text = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
-                                    }
-                                    
-                                    self.sundayCount++
-                                
-                            default:
-                                println()
-                            }
-                        }
-                    }
-                }
-                
-                return
-                
-        } // End Alamofire.request
-    }
 
+    // show an alert with key showing emoji / meaning
+    @IBAction func infoPressed(sender: UIBarButtonItem)
+    {
+        showPopup("", message: " 😀 Happy 😀\n\n😧 Achy 😧\n\n😷 Sick 😷\n\n😫 Tired 😫\n\n😡 Acute 😡")
+    }
+    
+    func showPopup(theTitle: String, message: String)
+    {
+        var alert = UIAlertController(title: theTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
 
-
+// enable calling toString on a double
 extension Double {
     func toString() -> String {
         return String(format: "%.2f",self)
