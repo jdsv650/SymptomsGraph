@@ -671,7 +671,14 @@
                             <outlet property="delegate" destination="d9k-T2-oS5" id="lbE-FI-00A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Feelings" id="OKM-E1-xv1"/>
+                    <navigationItem key="navigationItem" title="Feelings" id="OKM-E1-xv1">
+                        <barButtonItem key="rightBarButtonItem" image="info_icon_b.png" id="IBO-lc-8Zq">
+                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="infoPressed:" destination="d9k-T2-oS5" id="8qC-gJ-qYL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emojiFr1" destination="Fhk-IK-S2M" id="cK8-dW-WxD"/>
                         <outlet property="emojiFr2" destination="SBO-g6-gOF" id="NrA-BT-raL"/>
@@ -740,4 +747,7 @@
             <point key="canvasLocation" x="373" y="239"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info_icon_b.png" width="25" height="25"/>
+    </resources>
 </document>

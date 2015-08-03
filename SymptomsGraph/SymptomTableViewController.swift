@@ -71,6 +71,18 @@ class SymptomTableViewController: UITableViewController {
         
     }
     
+    
+    @IBAction func infoPressed(sender: UIBarButtonItem)
+    {
+        var message = " 😀 Happy 😀\n\n😧 Achy 😧\n\n😷 Sick 😷\n\n😫 Tired 😫\n\n😡 Acute 😡"
+        var alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        var action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
     func clearLabels()
     {
         emojiMo1.text = ""

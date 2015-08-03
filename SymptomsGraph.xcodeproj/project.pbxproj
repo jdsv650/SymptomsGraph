@@ -10,6 +10,7 @@
 		13E3C6067E67879384DE6848 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C4EBFF30397D355DEC9C25 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A63AD281B6D672900B76C84 /* graphsymptoms.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A63AD271B6D672900B76C84 /* graphsymptoms.json */; };
 		1A84AB841B6ED8A8000861A5 /* graphsymptoms2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A84AB831B6ED8A8000861A5 /* graphsymptoms2.json */; };
+		1A84AB8C1B6EDE8A000861A5 /* info_icon_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A84AB8B1B6EDE8A000861A5 /* info_icon_b.png */; };
 		1AF092301B6DA043004431FA /* SymptomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF0922F1B6DA043004431FA /* SymptomTableViewController.swift */; };
 		1AF57E0B1B6D53A30079E547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF57E0A1B6D53A30079E547 /* AppDelegate.swift */; };
 		1AF57E101B6D53A30079E547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF57E0E1B6D53A30079E547 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		00C4EBFF30397D355DEC9C25 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A63AD271B6D672900B76C84 /* graphsymptoms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graphsymptoms.json; sourceTree = "<group>"; };
 		1A84AB831B6ED8A8000861A5 /* graphsymptoms2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = graphsymptoms2.json; sourceTree = "<group>"; };
+		1A84AB8B1B6EDE8A000861A5 /* info_icon_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_icon_b.png; sourceTree = "<group>"; };
 		1AF0922F1B6DA043004431FA /* SymptomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomTableViewController.swift; sourceTree = "<group>"; };
 		1AF57E051B6D53A30079E547 /* SymptomsGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SymptomsGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF57E091B6D53A30079E547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				1A84AB831B6ED8A8000861A5 /* graphsymptoms2.json */,
 				1A63AD271B6D672900B76C84 /* graphsymptoms.json */,
+				1A84AB8B1B6EDE8A000861A5 /* info_icon_b.png */,
 				1AF57E091B6D53A30079E547 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -230,6 +233,7 @@
 				1AF57E151B6D53A30079E547 /* LaunchScreen.xib in Resources */,
 				1A84AB841B6ED8A8000861A5 /* graphsymptoms2.json in Resources */,
 				1AF57E121B6D53A30079E547 /* Images.xcassets in Resources */,
+				1A84AB8C1B6EDE8A000861A5 /* info_icon_b.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
