@@ -115,24 +115,39 @@ class SymptomTableViewController: UITableViewController {
                         println(symArr)
                         for data in symArr
                         {
-                            var feelings = self.feelings[(data["Feelings"] as? String)!]
-                            var temperature = (data["Temp"]! as? Double)!.toString() + " \u{00B0}F"
+                            // feelings emoji is empty "" unless we find "Feelings" with a matching type
+                            var feelings = ""
+                            if let feel = data["Feelings"] as? String
+                            {
+                                if let feelAsEmoji = self.feelings[feel]
+                                {
+                                    feelings = feelAsEmoji
+                                }
+                            }
                             
+                            // temperature feild is empty "" unless we find "Temp" with a Double value
+                            var temperature = ""
+                            if let temp = data["Temp"] as? Double
+                            {
+                               temperature = temp.toString()
+                            }
+                            
+                            // get the day of week and set labels for that day - up to 3 readings per day
                             switch data["Day"] as! String
                             {
                                 case "Monday":
                             
                                 if self.mondayCount == 0
                                 {
-                                    self.setTextForLabels(self.emojiMo1, temperatureLabel: self.tempMo1, emoji: feelings!, temperature: temperature)
+                                    self.setTextForLabels(self.emojiMo1, temperatureLabel: self.tempMo1, emoji: feelings, temperature: temperature)
                                 }
                                 else if self.mondayCount == 1
                                 {
-                                    self.setTextForLabels(self.emojiMo2, temperatureLabel: self.tempMo2, emoji: feelings!, temperature: temperature)
+                                    self.setTextForLabels(self.emojiMo2, temperatureLabel: self.tempMo2, emoji: feelings, temperature: temperature)
                                 }
                                 else if self.mondayCount == 2
                                 {
-                                    self.setTextForLabels(self.emojiMo3, temperatureLabel: self.tempMo3, emoji: feelings!, temperature: temperature)
+                                    self.setTextForLabels(self.emojiMo3, temperatureLabel: self.tempMo3, emoji: feelings, temperature: temperature)
                                 }
                     
                                 self.mondayCount++
@@ -141,15 +156,15 @@ class SymptomTableViewController: UITableViewController {
                                 
                                     if self.tuesdayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiTu1, temperatureLabel: self.tempTu1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTu1, temperatureLabel: self.tempTu1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.tuesdayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiTu2, temperatureLabel: self.tempTu2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTu2, temperatureLabel: self.tempTu2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.tuesdayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiTu3, temperatureLabel: self.tempTu3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTu3, temperatureLabel: self.tempTu3, emoji: feelings, temperature: temperature)
                                     }
                                 
                                 self.tuesdayCount++
@@ -158,15 +173,15 @@ class SymptomTableViewController: UITableViewController {
                                     
                                     if self.wednesdayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiWe1, temperatureLabel: self.tempWe1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiWe1, temperatureLabel: self.tempWe1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.wednesdayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiWe2, temperatureLabel: self.tempWe2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiWe2, temperatureLabel: self.tempWe2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.wednesdayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiWe3, temperatureLabel: self.tempWe3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiWe3, temperatureLabel: self.tempWe3, emoji: feelings, temperature: temperature)
                                     }
                                     
                                     self.wednesdayCount++
@@ -175,15 +190,15 @@ class SymptomTableViewController: UITableViewController {
                                     
                                     if self.thursdayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiTh1, temperatureLabel: self.tempTh1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTh1, temperatureLabel: self.tempTh1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.thursdayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiTh2, temperatureLabel: self.tempTh2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTh2, temperatureLabel: self.tempTh2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.thursdayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiTh3, temperatureLabel: self.tempTh3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiTh3, temperatureLabel: self.tempTh3, emoji: feelings, temperature: temperature)
                                     }
                                     
                                     self.thursdayCount++
@@ -192,15 +207,15 @@ class SymptomTableViewController: UITableViewController {
                                 
                                     if self.fridayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiFr1, temperatureLabel: self.tempFr1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiFr1, temperatureLabel: self.tempFr1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.fridayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiFr2, temperatureLabel: self.tempFr2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiFr2, temperatureLabel: self.tempFr2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.fridayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiFr3, temperatureLabel: self.tempFr3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiFr3, temperatureLabel: self.tempFr3, emoji: feelings, temperature: temperature)
                                     }
                                     
                                     self.fridayCount++
@@ -209,15 +224,15 @@ class SymptomTableViewController: UITableViewController {
                                     
                                     if self.saturdayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiSa1, temperatureLabel: self.tempSa1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSa1, temperatureLabel: self.tempSa1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.saturdayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiSa2, temperatureLabel: self.tempSa2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSa2, temperatureLabel: self.tempSa2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.saturdayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiSa3, temperatureLabel: self.tempSa3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSa3, temperatureLabel: self.tempSa3, emoji: feelings, temperature: temperature)
                                     }
                                     
                                     self.saturdayCount++
@@ -226,15 +241,15 @@ class SymptomTableViewController: UITableViewController {
                                 
                                     if self.sundayCount == 0
                                     {
-                                        self.setTextForLabels(self.emojiSu1, temperatureLabel: self.tempSu1, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSu1, temperatureLabel: self.tempSu1, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.sundayCount == 1
                                     {
-                                        self.setTextForLabels(self.emojiSu2, temperatureLabel: self.tempSu2, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSu2, temperatureLabel: self.tempSu2, emoji: feelings, temperature: temperature)
                                     }
                                     else if self.sundayCount == 2
                                     {
-                                        self.setTextForLabels(self.emojiSu3, temperatureLabel: self.tempSu3, emoji: feelings!, temperature: temperature)
+                                        self.setTextForLabels(self.emojiSu3, temperatureLabel: self.tempSu3, emoji: feelings, temperature: temperature)
                                     }
                                     
                                     self.sundayCount++
@@ -309,6 +324,7 @@ class SymptomTableViewController: UITableViewController {
         showPopup("", message: " 😀 Happy 😀\n\n😧 Achy 😧\n\n😷 Sick 😷\n\n😫 Tired 😫\n\n😡 Acute 😡")
     }
     
+    // display an alert controller with passed in title and message
     func showPopup(theTitle: String, message: String)
     {
         var alert = UIAlertController(title: theTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
